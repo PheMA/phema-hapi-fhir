@@ -31,5 +31,9 @@ before_script:
 script:
   - mvn -B install -DskipTests
 
-
-
+deploy:
+  provider: script
+  script: bash ./deployment/docker-deploy.sh
+  skip_cleanup: true
+  on:
+    tags: true
