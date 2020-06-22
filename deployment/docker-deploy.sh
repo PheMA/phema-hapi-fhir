@@ -6,7 +6,10 @@ echo "$DOCKERHUB_API_KEY" | docker login -u "$DOCKERHUB_USERNAME" --password-std
 set -o xtrace
 
 # build
-docker build -t phema/hapi-fhir ../
+docker build -t phema/hapi-fhir:$TRAVIS_TAG ../
+
+# list images
+docker images
 
 # Push the image
 docker push phema/phema-hapi-fhir:$TRAVIS_TAG
