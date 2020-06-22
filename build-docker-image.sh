@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker build -t phema/hapi-fhir
+docker build -t phema/phema-hapi-fhir .
 
